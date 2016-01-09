@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "Zoom-Mode",
+  "description": "This Extension is an customizable address filter",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ],
+
+  "permissions": [
+   "tabs"
+  ],
+
+  "background": {
+    "scripts": ["backGround.js"]
+  },
+  "chrome_url_overrides": {
+    "newtab" : "newtab.html"
+  }
+  "content_scripts": [
+    {
+      "matches": ["https://*/*","http://*/*"],
+      "js": ["checkList.js"]
+    }
+  ]
+}

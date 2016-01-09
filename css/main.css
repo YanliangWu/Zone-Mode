@@ -1,0 +1,9 @@
+body {
+    width: 300px;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    padding: 5px 3px;
+    font-family: arial, sans-serif;
+    -webkit-user-select: none;
+}
