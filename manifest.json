@@ -6,18 +6,17 @@
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_icon": "inactive.png"
+
   },
+
 
   "permissions": [
     "activeTab",
-    "https://ajax.googleapis.com/"
+    "tabs"
   ],
 
-  "permissions": [
-   "tabs"
-  ],
+
 
   "background": {
     "scripts": ["backGround.js"]
@@ -25,10 +24,5 @@
   "chrome_url_overrides": {
     "newtab" : "newtab.html"
   }
-  "content_scripts": [
-    {
-      "matches": ["https://*/*","http://*/*"],
-      "js": ["checkList.js"]
-    }
-  ]
+
 }
