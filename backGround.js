@@ -1,7 +1,5 @@
-var x = false;
+var started = false;
 disableBrowserAction();
-
-
 
 function disableBrowserAction(){
     chrome.browserAction.setIcon({path:"inactive.png"});
@@ -9,10 +7,9 @@ function disableBrowserAction(){
 }
 
 function checkList(current_url){
-
+  //alert(current_url);
   // we have origional key words such as zoom, blank etc.
-  var key_word = ["uwaterloo","zoom", "chrome"];
-
+  var key_word = ["uwaterloo","zoom", "chrome", "google"];
   var matched = -1;
 
   for(i = 0; i < key_word.length; i++){
@@ -22,12 +19,13 @@ function checkList(current_url){
     }
   }
   if (matched == -1){
-    alert("ZOOM!");
+    //redirect to an internal page
+    chrome.tabs.update({ url: 'chrome-extension://' + chrome.runtime.id + '/zoom.html' });
   }
 }
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    if(x == true && changeInfo.url != undefined){
+    if(started == true && changeInfo.url != undefined){
       checkList(changeInfo.url);
   }
 });
@@ -37,11 +35,11 @@ function enableBrowserAction(){
 }
 
 function updateState(){
-    if(x==false){
-        x=true;
+    if(started==false){
+        started=true;
         enableBrowserAction();
     }else{
-        x=false;
+        started=false;
         disableBrowserAction();
     }
 }
