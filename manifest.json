@@ -4,12 +4,12 @@
   "name": "Zoom-Mode",
   "description": "This Extension is an customizable address filter",
   "version": "1.0",
+  "options_page": "setting.html",
 
   "browser_action": {
-    "default_icon": "inactive.png"
-
+    "default_icon": "inactive.png",
+    "default_popup": "popup.html"
   },
-
 
   "permissions": [
     "activeTab",
@@ -19,9 +19,6 @@
 
   "background": {
     "scripts": ["backGround.js"]
-  },
-  "chrome_url_overrides": {
-    "newtab" : "newtab.html"
   }
-
+  
 }
