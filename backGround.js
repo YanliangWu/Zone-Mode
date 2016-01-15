@@ -1,5 +1,26 @@
 var started = false;
+var key_word = ["zoom","setting","chrome"];
 disableBrowserAction();
+
+function get_key_words(){
+  chrome.storage.local.get("key_words",function(data){
+    if(data.key_words == undefined){
+        key_word = ["zoom","setting","chrome"];
+
+    }
+    else{
+      key_word = data.key_words;
+      key_word.push("zoom","setting","chrome");
+      //alert(key_word);
+    }
+  })
+}
+
+get_key_words();
+
+chrome.storage.onChanged.addListener(function(){
+  get_key_words();
+})
 
 function disableBrowserAction(){
     chrome.browserAction.setIcon({path:"inactive.png"});
@@ -8,11 +29,8 @@ function disableBrowserAction(){
 
 
 function checkList(current_url){
-  //alert(current_url);
-  // we have origional key words such as zoom, blank etc.
-  var key_word = ["uwaterloo","zoom", "chrome", "google"];
-  var matched = -1;
 
+  var matched = -1;
   for(i = 0; i < key_word.length; i++){
     matched = current_url.indexOf(key_word[i]);
     if (matched != -1){

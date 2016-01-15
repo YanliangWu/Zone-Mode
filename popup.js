@@ -11,6 +11,7 @@ function Starting () {
   time = time * 60 * 1000;
 }
 
+
 // Starting function, set the switch from 0 to 1.
 document.addEventListener('DOMContentLoaded', function () {
     update = chrome.extension.getBackgroundPage().updateState;

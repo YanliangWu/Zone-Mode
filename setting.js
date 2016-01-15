@@ -1,29 +1,58 @@
+
 window.onload = function(){
+
+
   document.getElementById('save').onclick =  function() {
-    var value = document.getElementById("saveline").value;
-    chrome.storage.local.set({"whitelist_1" : value}, function(){
-      alert("successfully saved");
+    var to_be_add = document.getElementById("saveline").value;
+    if (to_be_add == ""){
+      alert("key words should not be empty");
+    }
+    else{
+    // by passing an object you can define default values e.g.: []
+    chrome.storage.local.get({key_words:[]}, function (result) {
+        // the input argument is ALWAYS an object containing the queried keys
+        // so we select the key we need
+        var key_words = result.key_words;
+        key_words.push(to_be_add);
+        // set the new array value to the same key
+        chrome.storage.local.set({key_words: key_words}, function () {
+            // if you don't  want to define default values
+            chrome.storage.local.get('key_words', function (result) {
+              var x = document.getElementById("key_word_list");
+              var option = document.createElement("option");
+              option.text =(to_be_add);
+              x.add(option);
+            });
+        });
     });
-  }
-  document.getElementById('load').onclick = function(){
-    chrome.storage.local.get("whitelist_1",function(data){
-      console.log(data.whitelist_1);
-    })
   }
 }
 
-// by passing an object you can define default values e.g.: []
-chrome.storage.local.get([]}, function (result) {
-    // the input argument is ALWAYS an object containing the queried keys
-    // so we select the key we need
-    var userKeyIds = result.userKeyIds;
-    userKeyIds.push({keyPairId: keyPairId, HasBeenUploadedYet: false});
-    // set the new array value to the same key
-    chrome.storage.local.set({userKeyIds: userKeyIds}, function () {
-        // you can use strings instead of objects
-        // if you don't  want to define default values
-        chrome.storage.local.get('userKeyIds', function (result) {
-            console.log(result.userKeyIds)
-        });
-    });
-});
+  document.getElementById('delete').onclick = function(){
+    chrome.storage.local.get("key_words",function(data){
+      console.log(data.key_words);
+    })
+  }
+
+
+  document.getElementById('reset').onclick = function(){
+    chrome.storage.local.clear(function(){
+      alert("all keywords has been cleared");
+      location.reload();
+    })
+  }
+
+
+  chrome.storage.local.get("key_words",function(data){
+    if (data.key_words != undefined){
+    for (i = 0; i < data.key_words.length; i++){
+      var x = document.getElementById("key_word_list");
+      var option = document.createElement("option");
+      option.text = data.key_words[i];
+      x.add(option);
+    }
+  }
+  })
+
+
+}
