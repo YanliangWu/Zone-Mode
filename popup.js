@@ -9,20 +9,21 @@ function Starting () {
   var time;
   time = document.getElementById("custom-time").value;
   time = time * 60 * 1000;
-  //setTimeout(function () {document.getElementById("demo").innerHTML = "ZOOM-MODE Working" ;}, 0)
-  chrome.runtime.sendMessage(1);
 }
 
 // Starting function, set the switch from 0 to 1.
 document.addEventListener('DOMContentLoaded', function () {
     update = chrome.extension.getBackgroundPage().updateState;
+    t_mode = chrome.extension.getBackgroundPage().timer_mode;
     document.getElementById('startButton').addEventListener('click', function() {
       update();
       if(chrome.extension.getBackgroundPage().started == true){
-        document.getElementById("working_status").innerHTML = "ZOOM-MODE Working" ;
+        document.getElementById("startButton").value = "Pause";
+        document.getElementById("working_status").innerHTML = "ZOOM-MODE Working";
       }
       else{
-        document.getElementById("working_status").innerHTML = "ZOOM-MODE Not Working" ;
+        document.getElementById("startButton").value = "Start";
+        document.getElementById("working_status").innerHTML = "ZOOM-MODE Not Working";
       }
     });
 });
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     if(chrome.extension.getBackgroundPage().started == true){
+      document.getElementById("startButton").value = "Pause";
       document.getElementById("working_status").innerHTML = "ZOOM-MODE Working" ;
     }
     else{

@@ -6,6 +6,7 @@ function disableBrowserAction(){
     //chrome.tabs.executeScript(null, {file: "togglecontentscript.js"})
 }
 
+
 function checkList(current_url){
   //alert(current_url);
   // we have origional key words such as zoom, blank etc.
@@ -25,10 +26,17 @@ function checkList(current_url){
 }
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    if(started == true && changeInfo.url != undefined){
-      checkList(changeInfo.url);
+    if(started == true){
+      checkList(tab.url);
   }
 });
+
+chrome.tabs.onReplaced.addListener(function(tabId, changeInfo, tab) {
+    if(started == true){
+      alert(tab.url);
+  }
+});
+
 
 function enableBrowserAction(){
     chrome.browserAction.setIcon({path:"active.png"});
@@ -43,5 +51,3 @@ function updateState(){
         disableBrowserAction();
     }
 }
-
-chrome.browserAction.onClicked.addListener(updateState);
