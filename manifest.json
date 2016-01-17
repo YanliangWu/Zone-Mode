@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Zoom-Mode",
+  "name": "Zone-Mode",
   "description": "This Extension is an customizable address filter",
-  "version": "1.0",
+  "version": "0.9",
   "options_page": "setting.html",
 
   "browser_action": {
@@ -20,5 +20,5 @@
   "background": {
     "scripts": ["backGround.js"]
   }
-  
+
 }

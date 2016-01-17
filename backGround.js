@@ -1,16 +1,16 @@
 var started = false;
-var key_word = ["zoom","setting","chrome"];
+var key_word = ["zone","setting","chrome"];
 disableBrowserAction();
 
 function get_key_words(){
   chrome.storage.local.get("key_words",function(data){
     if(data.key_words == undefined){
-        key_word = ["zoom","setting","chrome"];
+        key_word = ["zone","setting","chrome"];
 
     }
     else{
       key_word = data.key_words;
-      key_word.push("zoom","setting","chrome");
+      key_word.push("zone","setting","chrome");
       //alert(key_word);
     }
   })
@@ -39,7 +39,7 @@ function checkList(current_url){
   }
   if (matched == -1){
     //redirect to an internal page
-    chrome.tabs.update({ url: 'chrome-extension://' + chrome.runtime.id + '/zoom.html' });
+    chrome.tabs.update({ url: 'chrome-extension://' + chrome.runtime.id + '/zone.html' });
   }
 }
 

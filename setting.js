@@ -29,7 +29,7 @@ window.onload = function(){
 }
 
   document.getElementById('delete').onclick = function(){
-    
+
     chrome.storage.local.get("key_words",function(data){
       var temp = data.key_words;
       if (temp != undefined){

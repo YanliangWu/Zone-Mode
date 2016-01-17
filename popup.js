@@ -1,4 +1,4 @@
-// Zoom-Mode 0.8
+// Zone-Mode 0.8
 
 function openStarterPage(){
     window.open("setting.html");
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
       update();
       if(chrome.extension.getBackgroundPage().started == true){
         document.getElementById("startButton").value = "Pause";
-        document.getElementById("working_status").innerHTML = "ZOOM-MODE Working";
+        document.getElementById("working_status").innerHTML = "zone-MODE Working";
       }
       else{
         document.getElementById("startButton").value = "Start";
-        document.getElementById("working_status").innerHTML = "ZOOM-MODE Not Working";
+        document.getElementById("working_status").innerHTML = "zone-MODE Not Working";
       }
     });
 });
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     if(chrome.extension.getBackgroundPage().started == true){
       document.getElementById("startButton").value = "Pause";
-      document.getElementById("working_status").innerHTML = "ZOOM-MODE Working" ;
+      document.getElementById("working_status").innerHTML = "zone-MODE Working" ;
     }
     else{
-      document.getElementById("working_status").innerHTML = "ZOOM-MODE Not Working" ;
+      document.getElementById("working_status").innerHTML = "zone-MODE Not Working" ;
     }
 });
