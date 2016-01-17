@@ -29,8 +29,12 @@ window.onload = function(){
 }
 
   document.getElementById('delete').onclick = function(){
+    
     chrome.storage.local.get("key_words",function(data){
-      console.log(data.key_words);
+      var temp = data.key_words;
+      if (temp != undefined){
+        var index = array.indexOf();
+      }
     })
   }
 
