@@ -1,9 +1,28 @@
 body {
-    width: 300px;
-    font-size: 12px;
-    text-align: center;
-    margin: 0;
-    padding: 5px 3px;
-    font-family: arial, sans-serif;
-    -webkit-user-select: none;
+  width: 250px;
+  height: 300px;
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 100%;
+}
+div.titleBlock{
+  height: 100px;
+  width: 250px;
+  text-align: center;
+}
+div.buttonBlock{
+  width: 250px;
+  height: 80px;
+  text-align: center;
+}
+div.normalBlock{
+  width: 250px;
+  height: 80px;
+  text-align: center;
+}
+#status {
+  /* avoid an excessively wide status text */
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 400px;
 }

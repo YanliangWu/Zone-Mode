@@ -19,12 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('startButton').addEventListener('click', function() {
       update();
       if(chrome.extension.getBackgroundPage().started == true){
-        document.getElementById("startButton").value = "Pause";
-        document.getElementById("working_status").innerHTML = "zone-MODE Working";
+        document.getElementById("startButton").innerHTML = "Pause";
+        document.getElementById("working_status").innerHTML = "Currently in Zone";
       }
       else{
-        document.getElementById("startButton").value = "Start";
-        document.getElementById("working_status").innerHTML = "zone-MODE Not Working";
+        document.getElementById("startButton").innerHTML = "Start";
+        document.getElementById("working_status").innerHTML = "Currently out of Zone";
+        
       }
     });
 });
@@ -35,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     if(chrome.extension.getBackgroundPage().started == true){
-      document.getElementById("startButton").value = "Pause";
-      document.getElementById("working_status").innerHTML = "zone-MODE Working" ;
+      document.getElementById("startButton").innerHTML = "Pause";
+      document.getElementById("working_status").innerHTML = "Currently in Zone" ;
     }
     else{
-      document.getElementById("working_status").innerHTML = "zone-MODE Not Working" ;
+      document.getElementById("working_status").innerHTML = "Zone-MODE Not Working" ;
     }
 });

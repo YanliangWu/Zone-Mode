@@ -2,37 +2,9 @@
 
 <html>
   <head>
-    <title>zone-Mode Extension's Popup</title>
-    <style>
-      body {
-        width: 250px;
-        height: 300px;
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      div.titleBlock{zone
-        height: 100px;
-        width: 250px;
-        text-align: center;
-      }
-      div.buttonBlock{
-        width: 250px;
-        height: 80px;
-        text-align: center;
-      }
-      div.normalBlock{
-        width: 250px;
-        height: 80px;
-        text-align: center;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
+    <title>Zone-Mode Extension's Popup</title>
+    <link rel="stylesheet" type="text/css" href="./css/button.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
 
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
@@ -45,22 +17,21 @@
   </head>
   <body>
 
-    <div = class = "titleBlock">
-      <h1> zone-Mode <h1>
+    <div class = "titleBlock">
+      <h3> Zone-Mode </h3>
     </div>
     <img id="image-result" hidden>
 
     <div class = "buttonBlock">
-      <form id="frm1" action="form_action.asp">
-      <!--input type="number" name="time" id = "custom-time" value = 50></br></br-->
 
-      <input type="button" id = "startButton" value = "Start"></input>
+      <a href="#" id = "startButton" class="myButton"> Start </a>
+
 
     </form>
     </div>
 
     <div class = "buttonBlock">
-      <button type="button" id = "settingButton" > Go Setting</button>
+      <a href="#" id = "settingButton" class="myButton"> Go Setting</a>
     </div>
     <div class = "normalBlock">
     <p id = "working_status"> </p>
