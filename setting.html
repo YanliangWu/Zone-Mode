@@ -1,41 +1,46 @@
 <html>
 
 <head>
-<title> Setting </title>
+<title> Settings </title>
 <script src = "setting.js"></script>
-
+<link rel="stylesheet" type="text/css" href="./css/setting.css">
+<link rel="stylesheet" type="text/css" href="./css/button.css">
 </head>
 
 <body>
 
-  <h1> Setting </h1>
-  <p> white lists: </p>
-
+  <p> Settings </p>
+  <hr />
+  <p> white lists managment: </p>
   <form>
+  <div class = "keywords_block">
+  <div class = "keywords_select">
   <select id="key_word_list" size="10">
   </select>
-
-
-  <input type="button" id = "delete" value = "delete the keywords">
-
-
+  </div>
+  <div class = "keywords_button">
+  <a href="#" id = "delete" class="myButton"> Delete Keyword</a>
+  </div>
+  </div>
 </br>
 </br>
 </br>
 </br>
 </br>
-
+</br>
+</br>
   <input type = "text" id = "saveline"> </input>
-  <input type="button" id = "save" value = "Save the keywords">
-
+  <a href="#" id = "save" class="myButton"> Add keywords</a>
+  <a href="#" id = "reset" class="myButton"> Reset keywords</a>
 </br>
 </br>
 </br>
 </br>
 </br>
-
-  <input type="button" id = "reset" value = "Reset the keywords">
-
+  </form>
+<form>
+  <input type = "text" id = "redirection" style="width:300px" value = "https://learn.uwaterloo.ca"></input>
+  <a href="#" id = "redirect" class="myButton"> Set Redirection</a>
 </form>
 
 </body>

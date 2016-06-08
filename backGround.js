@@ -39,7 +39,8 @@ function checkList(current_url){
   }
   if (matched == -1){
     //redirect to an internal page
-    chrome.tabs.update({ url: 'chrome-extension://' + chrome.runtime.id + '/zone.html' });
+    //chrome.tabs.update({ url: 'chrome-extension://' + chrome.runtime.id + '/zone.html' });
+    chrome.tabs.update({ url: 'https://learn.uwaterloo.ca' });
   }
 }
 
@@ -51,7 +52,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
 chrome.tabs.onReplaced.addListener(function(tabId, changeInfo, tab) {
     if(started == true){
-      alert(tab.url);
+      checkList(tab.url);
   }
 });
 

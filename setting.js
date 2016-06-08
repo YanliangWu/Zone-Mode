@@ -28,12 +28,15 @@ window.onload = function(){
   }
 }
 
+// delete keyword (unfinished)
   document.getElementById('delete').onclick = function(){
 
     chrome.storage.local.get("key_words",function(data){
       var temp = data.key_words;
+      alert(index);
       if (temp != undefined){
         var index = array.indexOf();
+
       }
     })
   }

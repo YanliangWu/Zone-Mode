@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       else{
         document.getElementById("startButton").innerHTML = "Start";
         document.getElementById("working_status").innerHTML = "Currently out of Zone";
-        
+
       }
     });
 });
@@ -40,6 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById("working_status").innerHTML = "Currently in Zone" ;
     }
     else{
-      document.getElementById("working_status").innerHTML = "Zone-MODE Not Working" ;
+      document.getElementById("working_status").innerHTML = "Currently out of Zone" ;
     }
 });
