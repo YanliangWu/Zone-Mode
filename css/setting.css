@@ -16,6 +16,9 @@ div.keywords_select{
   width: 100px;
   text-align: center;
 }
+select.selectBox {
+  width: 80px;
+}
 div.keywords_button{
   margin-left: 100px;
   height: 100px;

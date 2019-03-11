@@ -4,11 +4,13 @@
   "name": "Zone-Mode",
   "description": "This Extension is an customizable address filter",
   "version": "0.9",
-  "options_page": "setting.html",
+  "options_page": "html/config.html",
+
+  "content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com; object-src 'self'",
 
   "browser_action": {
     "default_icon": "inactive.png",
-    "default_popup": "popup.html"
+    "default_popup": "html/popup.html"
   },
 
   "permissions": [
@@ -18,7 +20,7 @@
   ],
 
   "background": {
-    "scripts": ["backGround.js"]
+    "scripts": ["js/backGround.js"]
   }
 
 }

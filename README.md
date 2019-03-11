@@ -1,22 +1,17 @@
 # Zoom-Mode
-A chrome extension which is a whitelist website blockers.  
+A chrome extension which is a whitelist website blockers. 
+
+It was a side project I made long time ago and I just decided to resume the development of this idea! 
 
 Version 0.9  
 
+## Update Note
 ---
+2019.03.11 Major Refactors. 
 
-Currently working on:  
-* Whitelist management  
-* Session Timer  
-* Make it looks better :)  
-
+## Install Guide
 ---
-
 To Install:  
 1. Download and unzip  
 2. open chrome://extensions and click "Load Unpacked Extension.."  
 3. Locate to the folder and click open  
-
----
-
-If you want a packed .crx file, download it here: <http://www.student.cs.uwaterloo.ca/~y389wu/zoom.html>

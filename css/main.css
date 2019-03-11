@@ -1,12 +1,12 @@
 body {
   width: 250px;
-  height: 300px;
+  height: 180px;
   font-family: arial,helvetica,sans-serif;
   font-size: 100%;
   background-color: white;
 }
 div.titleBlock{
-  height: 100px;
+  height: 80px;
   width: 250px;
   text-align: center;
 }
