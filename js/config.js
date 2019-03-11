@@ -1,4 +1,6 @@
-
+/* 
+https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=table-with-add-and-delete-row-feature
+*/
 var action = '<td>' + 
 '<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>' +
 '<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>' +
@@ -73,6 +75,16 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+	$(document).on("click", "#submitRedirectionUrlBtn", function(){
+        var url = $("#redirectionUrl")[0].value;
+        console.log("Redirection URL: " + url);
+        chrome.storage.local.set({'redirectionUrl': url}, function(){
+            alert("Redirection set successfully");
+          })
+    });
+});
+
 function removeItem(keyword){
     chrome.storage.local.get('keyWords', function (result) {
         var remainingKeyWords = result.keyWords; 
@@ -88,11 +100,12 @@ function removeItem(keyword){
 
 $(document).ready(function(){
     // Document on load Set up everything first
-    chrome.storage.local.get('keyWords', function (result) {
+    chrome.storage.local.get(['keyWords', 'redirectionUrl'], function (result) {
         console.log(result.keyWords);
         result.keyWords.forEach(function(keyword){
             var row = '<tr>' + '<td class = "keyword">' + keyword +'</td>' + action +'</tr>';
             $("table").append(row);
         });
+        $("#redirectionUrl")[0].value = result.redirectionUrl;
       });
 })

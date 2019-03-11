@@ -7,6 +7,8 @@
 <title>Zone-Mode configurations</title>
 
 <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/config.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -33,11 +35,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        
                     </tr>      
                 </tbody>
             </table>
         </div>
-    </div>     
+    </div> 
+    <div class="container">
+        <div class="table-wrapper">
+            <form id = "redirectionUrlTable">
+                <div class="form-group">
+                    <h4 for="redirectionLabel">Redirection URL</h4>
+                    <p>Redirection Link has to contains header: example: "https://google.com"</p>
+                    <input type="url" class="form-control" id="redirectionUrl" placeholder="https://example.com">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitRedirectionUrlBtn">Submit</button>
+            </form>
+        </div>
+    </div>    
 </body>
 </html>                            
