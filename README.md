@@ -1,7 +1,9 @@
 # Zoom-Mode
 A chrome extension to filter and redirect some websites that could distract you during works. 
 
-It was a side project I made long time ago and I just decided to resume the development of this idea! (Because I really need this..)
+It was a side project I made long time ago and I just decided to resume the development of this idea! (Because I really need this..)  
+
+Since I have very limited front-end & web dev experiences, it could contains lots of bad pracices within my code base. It will be greatly appriciated if you notice something bad and feel free to send out PR or issues. 
 
 ## What does Zone-Mode mean? 
 See explaination [here](https://www.urbandictionary.com/define.php?term=In%20The%20Zone)
@@ -10,29 +12,27 @@ See explaination [here](https://www.urbandictionary.com/define.php?term=In%20The
 )
 
 ## Update Note
----
 * 2019.03.12 Some minor fixes, bumping version up to 1.0. Basic feature should be usable.  
 * 2019.03.11 Major Refactors.
 
 ## Start-up Guide
----
 To Install:  
 1. Download and unzip this package, or clone this git repo.
 2. open chrome://extensions and click "Load Unpacked Extension.."  
 3. Locate to the folder and click open
 
 ## Testing
----
 ### Unit test
 Unit test is unavailable at the moment, all test done manually, will consider adding unit testing in the future version.
 
 ### Automation tests
 Automation test is unavailable as well as I don't think it's needed right now.
 
-
 ## To-Do Lists (Potentially)
 * Add some metrics to demonstrate blocking service. 
 * Create new page for metric visulization. Potentially using [chartJS](https://www.chartjs.org/)
+    * Activation time per day metrics
+    * Redirection trigger metric
 * Skin customizations?
 * Add default redirection page
 * Fix some style inconsistency
