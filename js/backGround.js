@@ -31,6 +31,6 @@ chrome.storage.local.get('activated', function(item){
   } else if(item.activated){
     setBadge('ON','#4688F1')
   } else{
-    setBadge('OFF','#4688F1')
+    setBadge('','#4688F1')
   }
 });
