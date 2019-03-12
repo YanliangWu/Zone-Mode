@@ -15,7 +15,7 @@ $(document).ready(function(){
 		$(this).attr("disabled", "disabled");
 		var index = $("table tbody tr:last-child").index();
         var row = '<tr>' +
-            '<td><input type="text" class="form-control" name="name" id="name"></td>' + action +
+            '<td class = "keyword"><input type="text" class="form-control" name="name" id="name"></td>' + action +
         '</tr>';
     	$("table").append(row);		
 		$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
@@ -57,18 +57,19 @@ $(document).ready(function(){
     });
     
     // Edit row on edit button click
-	$(document).on("click", ".edit", function(){		
+	$(document).on("click", ".edit", function(){
         $(this).parents("tr").find("td:not(:last-child)").each(function(){
             removeItem($(this).text());
 			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-		});		
+		});
         $(this).parents("tr").find(".add, .edit").toggle();
 		$(".add-new").attr("disabled", "disabled");
     });
 
     // Delete row on delete button click
 	$(document).on("click", ".delete", function(){
-        var keyword = $(this).parents("td").siblings(".keyword:first")[0].innerHTML;
+        console.log($(this).parents("td").siblings())
+        var keyword = $(this).parents("td").siblings(".keyword")[0].innerHTML;
         $(this).parents("tr").remove();
         $(".add-new").removeAttr("disabled");
         removeItem(keyword);
