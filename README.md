@@ -28,11 +28,19 @@ Unit test is unavailable at the moment, all test done manually, will consider ad
 ### Automation tests
 Automation test is unavailable as well as I don't think it's needed right now.
 
-## To-Do Lists (Potentially)
+## Product Backlog
 * Add some metrics to demonstrate blocking service. 
-* Create new page for metric visulization. Potentially using [chartJS](https://www.chartjs.org/)
     * Activation time per day metrics
     * Redirection trigger metric
+* More popup confirmation before making changes like
+    * Remove keywords
+    * Set Redirections URL
+* Data Reset Button
+* Add [Tooltips](https://getbootstrap.com/docs/4.1/components/tooltips/) for icons
+* Localize remote icon so that we don't have to pull google libraries
+* UI Redesign with fully bootstrap migration, current UI looks pretty bad..
+    * Potentially try out other frameworks like React? (Could be too heavy for chrome extension)
+* Create new page for metric visulization. Potentially using [chartJS](https://www.chartjs.org/)
 * Skin customizations?
 * Add default redirection page
 * Fix some style inconsistency
